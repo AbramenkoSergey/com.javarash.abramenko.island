@@ -2,31 +2,21 @@ package entity.creature.animal;
 
 import entity.creature.Creature;
 
-public abstract class Animal extends Creature {
+public abstract class Animal extends Creature
+        implements  Moveble, Dieble, Eateble, Reproduceble{
 
     // ОБЩИЕ ХАРАКТЕРИСТИКИ
-    // СЫТОСТЬ satiety = ? вес
+    // СЫТОСТЬ = сколько может съесть
+    int satiety;
     // ВЕС ЖИВОТНОГО
+    int weight;
     // СКОРОСТЬ ПЕРЕМЕЩЕНИЯ
-    void eat(Creature c) {
+    int travelRange;
 
-        // ДЕФОЛТНАЯ РЕАЛИЗАЦИЯ
-        // КТО ИМЕННО ЭТОТ Creature БУДЕТ ВЛИЯТЬ НА ФОРМАТ ПОЕДАНИЯ
-        // КОГДА СТАНЕТ ПОНЯТНО КТО КОНКРЕТНО ЭТО Creature
-        // МЫ МОЖЕМ ОПРЕДЕЛИТЬ ВЕРОЯТНОСТЬ ЕГО ПОЕДАНИЯ И РЕАЛИЗОВАТЬ ЭТУ ЛОГИКУ
-    }
-
-    void move() {
-        // ДЕФОЛТНАЯ РЕАЛИЗАЦИЯ
-    }
-
-    Creature reproduce() {
-        // ДЕФОЛТНАЯ РЕАЛИЗАЦИЯ
-        return null;
-    }
-
-    void die() {
-        // ДЕФОЛТНАЯ РЕАЛИЗАЦИЯ
+    public Animal(int satiety, int weight, int travelRange) {
+        this.satiety = satiety;
+        this.weight = weight;
+        this.travelRange = travelRange;
     }
 
     void decreaseWeight(){
