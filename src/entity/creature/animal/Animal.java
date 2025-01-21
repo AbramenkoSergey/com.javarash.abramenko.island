@@ -7,13 +7,13 @@ public abstract class Animal extends Creature
 
     // ОБЩИЕ ХАРАКТЕРИСТИКИ
     // СЫТОСТЬ = сколько может съесть
-    int satiety;
+    double satiety;
     // ВЕС ЖИВОТНОГО
-    int weight;
+    double weight;
     // СКОРОСТЬ ПЕРЕМЕЩЕНИЯ
     int travelRange;
 
-    public Animal(int satiety, int weight, int travelRange) {
+    public Animal(double satiety, double weight, int travelRange) {
         this.satiety = satiety;
         this.weight = weight;
         this.travelRange = travelRange;

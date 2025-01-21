@@ -2,9 +2,12 @@ package Settings;
 
 public class SettingsBoa {
     //удав
-    public final static double boaWeight = 15;
-    public final static double boaMaxInLocate = 30;
-    public final static double boaTravelRange = 1;
+
+    public final static String Bear = "\uD83D\uDC0D";
+
+    public final static int boaWeight = 15;
+    public final static int boaMaxInLocate = 30;
+    public final static int boaTravelRange = 1;
     public final static double boaFullSaturation = 3;
 
     public final static int chanceToEatFox = 15;

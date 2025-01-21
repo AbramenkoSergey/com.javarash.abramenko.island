@@ -1,6 +1,8 @@
 package entity.creature.animal.predator;
 
+import Settings.SettingsWolf;
 import entity.creature.Creature;
+import entity.creature.animal.Animal;
 
 public class Wolf extends Predator{
     public Wolf(int satiety, int weight, int travelRange) {
@@ -26,4 +28,5 @@ public class Wolf extends Predator{
     public void die() {
 
     }
+
 }

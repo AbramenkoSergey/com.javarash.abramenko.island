@@ -4,7 +4,7 @@ import entity.creature.Creature;
 
 public class Boar extends Herbivore {
     //    кабан
-    public Boar(int satiety, int weight, int travelRange) {
+    public Boar(double satiety, double weight, int travelRange) {
         super(satiety, weight, travelRange);
     }
 

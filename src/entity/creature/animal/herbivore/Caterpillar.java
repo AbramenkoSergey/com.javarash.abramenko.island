@@ -4,7 +4,7 @@ import entity.creature.Creature;
 
 public class Caterpillar extends Herbivore{
     //    Гусеница
-    public Caterpillar(int satiety, int weight, int travelRange) {
+    public Caterpillar(double satiety, double weight, int travelRange) {
         super(satiety, weight, travelRange);
     }
 

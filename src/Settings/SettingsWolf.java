@@ -1,9 +1,11 @@
 package Settings;
 
-public class SrettigsWolf {
-    public final static double wolfWeight = 50;
-    public final static double wolfMaxInLocate = 30;
-    public final static double wolfTravelRange = 3;
+public class SettingsWolf {
+    public final static String wolf = "\uD83D\uDC3A";
+
+    public final static int wolfWeight = 50;
+    public final static int wolfMaxInLocate = 30;
+    public final static int wolfTravelRange = 3;
     public final static double wolfFullSaturation = 8;
 
     public final static int chanceToEatHorse = 10;

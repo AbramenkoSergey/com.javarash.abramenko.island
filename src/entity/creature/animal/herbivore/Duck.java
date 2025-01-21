@@ -3,7 +3,7 @@ package entity.creature.animal.herbivore;
 import entity.creature.Creature;
 
 public class Duck extends Herbivore{
-    public Duck(int satiety, int weight, int travelRange) {
+    public Duck(double satiety, double weight, int travelRange) {
         super(satiety, weight, travelRange);
     }
 
