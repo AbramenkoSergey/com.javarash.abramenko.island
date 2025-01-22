@@ -1,12 +1,14 @@
 package entity.creature.animal.predator;
 
-import Settings.SettingsWolf;
+import Settings.SettigsAnimal;
+import Settings.Settings;
 import entity.creature.Creature;
-import entity.creature.animal.Animal;
 
 public class Wolf extends Predator{
-    public Wolf(int satiety, int weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+
+    public Wolf(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 
     @Override
@@ -16,17 +18,20 @@ public class Wolf extends Predator{
 
     @Override
     public void move() {
+//        обратиться  к масиву в локейте
 
     }
-
+//    енам жертв
     @Override
     public void eat(Creature c) {
+//        передать сюда то что он может есть и рандомом определить что именно, далее выяснить  сьел ли он это
 
     }
 
     @Override
     public void die() {
-
+//        выпилиться из локации
     }
+
 
 }

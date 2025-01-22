@@ -1,12 +1,14 @@
 package entity.creature.animal.herbivore;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Caterpillar extends Herbivore{
-    //    Гусеница
-    public Caterpillar(double satiety, double weight, int travelRange) {
-        super(satiety, weight, travelRange);
+    public Caterpillar(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
+    //    Гусеница
+
 
     @Override
     public void die() {

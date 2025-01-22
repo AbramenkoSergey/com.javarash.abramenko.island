@@ -1,10 +1,13 @@
 package entity.creature.animal.herbivore;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Rabbit extends Herbivore{
-    public Rabbit(int satiety, int weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+
+    public Rabbit(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 
     @Override

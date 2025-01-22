@@ -1,10 +1,13 @@
 package entity.creature.animal.predator;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Boa extends Predator{
-    public Boa(double satiety, int weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+
+    public Boa(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 
     @Override

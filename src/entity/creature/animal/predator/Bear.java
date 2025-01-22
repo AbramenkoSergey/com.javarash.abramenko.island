@@ -1,10 +1,13 @@
 package entity.creature.animal.predator;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Bear extends Predator{
-    public Bear(int satiety, int weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+
+    public Bear(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 
     @Override

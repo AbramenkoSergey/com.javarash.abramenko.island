@@ -1,12 +1,14 @@
 package entity.creature.animal.herbivore;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Boar extends Herbivore {
-    //    кабан
-    public Boar(double satiety, double weight, int travelRange) {
-        super(satiety, weight, travelRange);
+    public Boar(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
+    //    кабан
+
 
     @Override
     public void die() {

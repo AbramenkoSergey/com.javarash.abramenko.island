@@ -1,6 +1,6 @@
 package Settings;
 
-public class SettingsBear{
+public class SettingsBear {
     public final static String Bear = "\uD83D\uDC3B";
 
     public final static int bearWeight = 500;

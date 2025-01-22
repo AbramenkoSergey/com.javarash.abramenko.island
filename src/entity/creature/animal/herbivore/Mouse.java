@@ -1,10 +1,13 @@
 package entity.creature.animal.herbivore;
 
+import Settings.SettigsAnimal;
 import entity.creature.Creature;
 
 public class Mouse extends Herbivore{
-    public Mouse(int satiety, int weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+
+    public Mouse(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 
     @Override

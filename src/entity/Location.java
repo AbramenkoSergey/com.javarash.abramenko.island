@@ -5,8 +5,6 @@ import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
 import entity.creature.plant.Plant;
 
-import java.util.Random;
-
 public class Location {
 
     // ЛОКАЦИЯ ДОЛЖНА ЗНАТЬ ТЕКУЩЕЕ КОЛ-ВО ЖИВОТНЫХ КОНКРЕТНОГО ВИДА
@@ -27,7 +25,7 @@ public class Location {
     Horse[] horsesInLocate = new Horse[SettingsHorse.horseMaxInLocate];
     Deer[] deerInLocate = new Deer[SettingsDear.dearMaxInLocate];
     Sheep[] sheepInLocate = new Sheep[SettingsSheep.sheepMaxInLocate];
-    Wolf[] wolvesInLocate = new Wolf[SettingsWolf.wolfMaxInLocate];
+    Wolf[] wolvesInLocate = new Wolf[Settings.wolfMaxInLocate];
     Plant[] plantsInLocate = new Plant[SettingsPlants.plantsMaxInLocate];
 
 

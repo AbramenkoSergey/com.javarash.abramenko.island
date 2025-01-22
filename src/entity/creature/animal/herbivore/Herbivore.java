@@ -1,9 +1,11 @@
 package entity.creature.animal.herbivore;
 
+import Settings.SettigsAnimal;
 import entity.creature.animal.Animal;
 
 public abstract class Herbivore extends Animal {
-    public Herbivore(double satiety, double weight, int travelRange) {
-        super(satiety, weight, travelRange);
+
+    public Herbivore(SettigsAnimal settigsAnimal) {
+        super(settigsAnimal);
     }
 }
