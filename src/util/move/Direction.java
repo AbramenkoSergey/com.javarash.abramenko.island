@@ -1,4 +1,4 @@
-package util;
+package util.move;
 
 public enum Direction {
     UP,

@@ -2,9 +2,9 @@ package entity.creature.plant;
 
 import Settings.SettigsAnimal;
 import entity.creature.Creature;
-import entity.creature.animal.Animal;
 
-public class Plant extends Animal {
+
+public class Plant extends Creature {
 
     public Plant(SettigsAnimal settigsAnimal) {
         super(settigsAnimal);
@@ -15,17 +15,4 @@ public class Plant extends Animal {
 
         }
 
-    @Override
-    public void die() {
-    }
-
-    @Override
-    public void eat(Creature c) {
-
-    }
-
-    @Override
-    public void move() {
-
-    }
 }

@@ -11,8 +11,4 @@ public abstract class Animal extends Creature
 
     // ОБЩИЕ ХАРАКТЕРИСТИКИ
     // СЫТОСТЬ = сколько может съесть
-
-
-    void decreaseWeight(){
-    }
 }

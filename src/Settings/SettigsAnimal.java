@@ -5,10 +5,10 @@ import entity.creature.factory.CREATURE_TYPE;
 import java.util.Map;
 
 public class SettigsAnimal {
-    public  double weight;
-    public  int travelRange;
-    public double satiety;
-    public Map<CREATURE_TYPE,Integer> chanceToEat;
+    private double weight;
+    private int travelRange;
+    private double satiety;
+    private Map<CREATURE_TYPE, Integer> chanceToEat;
 
     public double getWeight() {
         return weight;

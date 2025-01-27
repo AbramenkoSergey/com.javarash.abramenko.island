@@ -2,14 +2,14 @@ package entity;
 
 public class Island {
 
-    private int columnsCount;
-    private int rowsCount;
+    private static int columnsCount;
+    private static int rowsCount;
 
     public Island(int columnsCount, int rowsCount) {
         this.columnsCount = columnsCount;
         this.rowsCount = rowsCount;
     }
 
-    public Location[][] locations = new Location[columnsCount][rowsCount];
+    public  Location[][] locations = new Location[columnsCount][rowsCount];
 
 }
