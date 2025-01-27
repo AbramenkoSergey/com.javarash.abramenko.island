@@ -5,6 +5,7 @@ import entity.creature.Creature;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
 import entity.creature.factory.CREATURE_TYPE;
+import entity.creature.factory.Factory;
 import entity.creature.plant.Plant;
 
 import java.util.HashMap;
@@ -15,7 +16,6 @@ public class Location implements Runnable {
     // ЛОКАЦИЯ ДОЛЖНА ЗНАТЬ ТЕКУЩЕЕ КОЛ-ВО ЖИВОТНЫХ КОНКРЕТНОГО ВИДА
     // НА СЕБЕ
     // МАССИВ?
-
 
     //создать мапу с животными
     Bear[] bearsInLocate = new Bear[Settings.BEAR_MAX_IN_LOCATE];
@@ -78,6 +78,57 @@ public class Location implements Runnable {
     @Override
     public void run() {
 
+    }
+
+    private void initialization(){
+        Factory factory = new Factory();
+        for (int i = 0; i < bearsInLocate.length/3; i++) {
+            bearsInLocate[i] = (Bear) factory.create(CREATURE_TYPE.BEAR);
+        }
+        for (int i = 0; i < boaInLocate.length/3; i++) {
+            boaInLocate[i] = (Boa) factory.create(CREATURE_TYPE.BOA);
+        }
+        for (int i = 0; i < eaglesInLocate.length/3; i++) {
+            eaglesInLocate[i]= (Eagle) factory.create(CREATURE_TYPE.EAGLE);
+        }
+        for (int i = 0; i < foxesInLocate.length/3; i++) {
+            foxesInLocate[i] = (Fox) factory.create(CREATURE_TYPE.WOLF);
+        }
+
+
+        for (int i = 0; i < bearsInLocate.length/3; i++) {
+            boarsInLocate[i]= (Boar) factory.create(CREATURE_TYPE.BOAR);
+        }
+        for (int i = 0; i < buffaloInLocate.length/3; i++) {
+            buffaloInLocate[i]= (Buffalo) factory.create(CREATURE_TYPE.BUFFALO);
+        }
+        for (int i = 0; i < caterpillarsInLocate.length/3; i++) {
+            caterpillarsInLocate[i]= (Caterpillar) factory.create(CREATURE_TYPE.CATERPILLAR);
+        }
+        for (int i = 0; i < deerInLocate.length/3; i++) {
+            deerInLocate[i] = (Deer) factory.create(CREATURE_TYPE.DEER);
+        }
+        for (int i = 0; i < ducksInLocate.length/3; i++) {
+            ducksInLocate[i]= (Duck) factory.create(CREATURE_TYPE.DUCK);
+        }
+        for (int i = 0; i < goatsInLocate.length/3; i++) {
+            goatsInLocate[i] = (Goat) factory.create(CREATURE_TYPE.GOAT);
+        }
+        for (int i = 0; i < horsesInLocate.length/3; i++) {
+            horsesInLocate[i]= (Horse) factory.create(CREATURE_TYPE.HORSE);
+        }
+        for (int i = 0; i < mouseInLocate.length/3; i++) {
+            mouseInLocate[i]= (Mouse) factory.create(CREATURE_TYPE.MOUSE);
+        }
+        for (int i = 0; i < rabbitsInLocate.length/3; i++) {
+            rabbitsInLocate[i] = (Rabbit) factory.create(CREATURE_TYPE.RABBIT);
+        }
+        for (int i = 0; i < sheepInLocate.length/3; i++) {
+            sheepInLocate[i]= (Sheep) factory.create(CREATURE_TYPE.SHEEP);
+        }
+        for (int i = 0; i < plantsInLocate.length/2; i++) {
+            plantsInLocate[i] = (Plant) factory.create(CREATURE_TYPE.PLANT);
+        }
     }
 
     // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -

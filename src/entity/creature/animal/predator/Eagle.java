@@ -6,6 +6,8 @@ import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
 import util.rndm.RandomVictim;
 
+import static util.ToEat.toEatPr;
+
 public class Eagle extends Predator{
 
 
@@ -20,10 +22,8 @@ public class Eagle extends Predator{
 
     @Override
     public void eat() {
-        CREATURE_TYPE name = RandomVictim.randomVictim(Settings.eagleVictim);
-        SettigsAnimal settigsAnimal = Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.EAGLE);
-        Integer chanceEat = settigsAnimal.getChanceToEat().get(name);
-        if (RandomVictim.victimIsDead(chanceEat)){
+        Integer chance = toEatPr(Settings.eagleVictim,CREATURE_TYPE.EAGLE);
+        if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 
         }else{

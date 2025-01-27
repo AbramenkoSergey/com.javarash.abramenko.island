@@ -1,7 +1,12 @@
 package entity.creature.animal.herbivore;
 
 import Settings.SettigsAnimal;
+import Settings.Settings;
 import entity.creature.Creature;
+import entity.creature.factory.CREATURE_TYPE;
+import util.rndm.RandomVictim;
+
+import static util.ToEat.toEatHerb;
 
 public class Duck extends Herbivore{
 
@@ -16,7 +21,14 @@ public class Duck extends Herbivore{
     }
 
     @Override
-    public void eat(Creature c) {
+    public void eat() {
+        Integer chance = toEatHerb(Settings.duckVictim, CREATURE_TYPE.DUCK);
+        if (RandomVictim.victimIsDead(chance)){
+            //удалить жертву из массива локации
+
+        }else{
+            die();
+        }
 
     }
 

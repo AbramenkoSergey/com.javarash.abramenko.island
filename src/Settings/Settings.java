@@ -53,6 +53,7 @@ public class Settings {
     public static ArrayList horseVictim = new ArrayList(Arrays.asList(CREATURE_TYPE.PLANT));
     public static ArrayList rabbitVictim = new ArrayList(Arrays.asList(CREATURE_TYPE.PLANT));
     public static ArrayList sheepVictim = new ArrayList(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList mouseVictim = new ArrayList(Arrays.asList(CREATURE_TYPE.PLANT,CREATURE_TYPE.CATERPILLAR));
 
     static {
         //шанс съесть
@@ -123,6 +124,9 @@ public class Settings {
                 Map.of(CREATURE_TYPE.PLANT,100)));
         CREATURE_SETTINGS.put(CREATURE_TYPE.SHEEP,new SettigsAnimal(3,3,15,
                 Map.of(CREATURE_TYPE.PLANT,100)));
+        CREATURE_SETTINGS.put(CREATURE_TYPE.MOUSE,new SettigsAnimal(3,3,15,
+                Map.of(CREATURE_TYPE.PLANT,100,
+                        CREATURE_TYPE.CATERPILLAR,90)));
 
     }
     public static final int BEAR_MAX_IN_LOCATE = 5;
