@@ -22,7 +22,7 @@ public class Mouse extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.mouseVictim, CREATURE_TYPE.MOUSE);
+        Integer chance = this.toEatHerb(Settings.mouseVictim, CREATURE_TYPE.MOUSE);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

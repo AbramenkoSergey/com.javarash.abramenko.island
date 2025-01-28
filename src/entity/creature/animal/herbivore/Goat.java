@@ -22,7 +22,7 @@ public class Goat extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.goatVictim, CREATURE_TYPE.GOAT);
+        Integer chance = this.toEatHerb(Settings.goatVictim, CREATURE_TYPE.GOAT);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

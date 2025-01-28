@@ -22,7 +22,7 @@ public class Deer extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.deerVictim, CREATURE_TYPE.DEER);
+        Integer chance = this.toEatHerb(Settings.deerVictim, CREATURE_TYPE.DEER);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

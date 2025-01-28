@@ -6,8 +6,6 @@ import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
 import util.rndm.RandomVictim;
 
-import static util.ToEat.toEatPr;
-
 public class Boa extends Predator{
 
 
@@ -22,7 +20,7 @@ public class Boa extends Predator{
 
     @Override
     public void eat() {
-        Integer chance = toEatPr(Settings.boaVictim,CREATURE_TYPE.BOA);
+        Integer chance = this.toEatPr(Settings.boaVictim,CREATURE_TYPE.BOA);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

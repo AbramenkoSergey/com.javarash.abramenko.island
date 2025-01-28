@@ -22,7 +22,7 @@ public class Caterpillar extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.caterpillarVictim, CREATURE_TYPE.CATERPILLAR);
+        Integer chance = this.toEatHerb(Settings.caterpillarVictim, CREATURE_TYPE.CATERPILLAR);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

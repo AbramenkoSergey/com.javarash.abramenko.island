@@ -22,7 +22,7 @@ public class Rabbit extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.rabbitVictim, CREATURE_TYPE.RABBIT);
+        Integer chance = this.toEatHerb(Settings.rabbitVictim, CREATURE_TYPE.RABBIT);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

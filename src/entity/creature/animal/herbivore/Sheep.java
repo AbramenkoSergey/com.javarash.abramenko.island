@@ -6,8 +6,7 @@ import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
 import util.rndm.RandomVictim;
 
-import static util.ToEat.toEatHerb;
-import static util.ToEat.toEatPr;
+
 
 public class Sheep extends Herbivore{
 
@@ -23,7 +22,7 @@ public class Sheep extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.sheepVictim, CREATURE_TYPE.SHEEP);
+        Integer chance = this.toEatHerb(Settings.sheepVictim, CREATURE_TYPE.SHEEP);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

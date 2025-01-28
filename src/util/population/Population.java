@@ -6,7 +6,7 @@ import entity.Island;
 import java.util.Map;
 
 
-public class Population {
+public class Population  {
     static Island island;
 
     public Population(Island island) {
@@ -205,6 +205,7 @@ public class Population {
     public static void setSumPlant(Integer sumPlant) {
         Population.sumPlant = sumPlant;
     }
+
 
 
 }

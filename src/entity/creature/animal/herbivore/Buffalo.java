@@ -22,7 +22,7 @@ public class Buffalo extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.buffaloVictim, CREATURE_TYPE.BUFFALO);
+        Integer chance = this.toEatHerb(Settings.buffaloVictim, CREATURE_TYPE.BUFFALO);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

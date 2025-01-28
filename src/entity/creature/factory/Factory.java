@@ -10,25 +10,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Factory {
-    Map<CREATURE_TYPE,Class<?  extends Creature>> mapFactory = new HashMap<>();
+    public Map<CREATURE_TYPE,Class<?  extends Creature>> mapFactory = new HashMap<>();
 
     public Factory (){
+        mapFactory.put(CREATURE_TYPE.BEAR, Bear.class);
+        mapFactory.put(CREATURE_TYPE.BOA, Boa.class);
+        mapFactory.put(CREATURE_TYPE.EAGLE, Eagle.class);
+        mapFactory.put(CREATURE_TYPE.FOX, Fox.class);
         mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
-        mapFactory.put(CREATURE_TYPE.WOLF, Wolf.class);
+        mapFactory.put(CREATURE_TYPE.BOAR, Boar.class);
+        mapFactory.put(CREATURE_TYPE.BUFFALO, Buffalo.class);
+        mapFactory.put(CREATURE_TYPE.DEER, Deer.class);
+        mapFactory.put(CREATURE_TYPE.DUCK, Duck.class);
+        mapFactory.put(CREATURE_TYPE.GOAT, Goat.class);
+        mapFactory.put(CREATURE_TYPE.HORSE, Horse.class);
+        mapFactory.put(CREATURE_TYPE.MOUSE, Mouse.class);
+        mapFactory.put(CREATURE_TYPE.RABBIT, Rabbit.class);
+        mapFactory.put(CREATURE_TYPE.CATERPILLAR, Creature.class);
+        mapFactory.put(CREATURE_TYPE.SHEEP, Sheep.class);
+        mapFactory.put(CREATURE_TYPE.PLANT, Plant.class);
     }
 
     public Creature create(CREATURE_TYPE eff){
@@ -46,7 +46,7 @@ public class Factory {
            case DEER -> new Deer(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.DEER));
            case CATERPILLAR -> new Caterpillar(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.CATERPILLAR));
            case BUFFALO -> new Buffalo(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.BUFFALO));
-           case BOAR -> new Boar(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.FOX));
+           case BOAR -> new Boar(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.BOAR));
            case PLANT -> new Plant(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.PLANT));
            default -> throw new RuntimeException("Type not found: " + eff );
 

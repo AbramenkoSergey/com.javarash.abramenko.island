@@ -22,7 +22,7 @@ public class Duck extends Herbivore{
 
     @Override
     public void eat() {
-        Integer chance = toEatHerb(Settings.duckVictim, CREATURE_TYPE.DUCK);
+        Integer chance = this.toEatHerb(Settings.duckVictim, CREATURE_TYPE.DUCK);
         if (RandomVictim.victimIsDead(chance)){
             //удалить жертву из массива локации
 

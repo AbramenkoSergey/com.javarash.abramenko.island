@@ -11,7 +11,7 @@ import entity.creature.plant.Plant;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Location implements Runnable {
+public class Location {
 
     // ЛОКАЦИЯ ДОЛЖНА ЗНАТЬ ТЕКУЩЕЕ КОЛ-ВО ЖИВОТНЫХ КОНКРЕТНОГО ВИДА
     // НА СЕБЕ
@@ -74,12 +74,6 @@ public class Location implements Runnable {
         return animalInlLocate;
     }
 
-
-    @Override
-    public void run() {
-
-    }
-
     private void initialization(){
         Factory factory = new Factory();
         for (int i = 0; i < bearsInLocate.length/3; i++) {
@@ -92,11 +86,13 @@ public class Location implements Runnable {
             eaglesInLocate[i]= (Eagle) factory.create(CREATURE_TYPE.EAGLE);
         }
         for (int i = 0; i < foxesInLocate.length/3; i++) {
-            foxesInLocate[i] = (Fox) factory.create(CREATURE_TYPE.WOLF);
+            foxesInLocate[i] = (Fox) factory.create(CREATURE_TYPE.FOX);
         }
 
-
-        for (int i = 0; i < bearsInLocate.length/3; i++) {
+        for (int i = 0; i < wolvesInLocate.length/3; i++) {
+            wolvesInLocate[i]= (Wolf) factory.create(CREATURE_TYPE.WOLF);
+        }
+        for (int i = 0; i < boarsInLocate.length/3; i++) {
             boarsInLocate[i]= (Boar) factory.create(CREATURE_TYPE.BOAR);
         }
         for (int i = 0; i < buffaloInLocate.length/3; i++) {
@@ -128,6 +124,7 @@ public class Location implements Runnable {
         }
         for (int i = 0; i < plantsInLocate.length/2; i++) {
             plantsInLocate[i] = (Plant) factory.create(CREATURE_TYPE.PLANT);
+
         }
     }
 
