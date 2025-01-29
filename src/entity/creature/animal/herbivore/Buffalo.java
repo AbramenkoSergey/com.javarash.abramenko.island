@@ -6,7 +6,6 @@ import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
 import util.rndm.RandomVictim;
 
-import static util.ToEat.toEatHerb;
 
 public class Buffalo extends Herbivore{
     public Buffalo(SettigsAnimal settigsAnimal) {

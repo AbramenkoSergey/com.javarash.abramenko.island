@@ -13,11 +13,7 @@ import java.util.Map;
 
 public class Location {
 
-    // ЛОКАЦИЯ ДОЛЖНА ЗНАТЬ ТЕКУЩЕЕ КОЛ-ВО ЖИВОТНЫХ КОНКРЕТНОГО ВИДА
-    // НА СЕБЕ
-    // МАССИВ?
 
-    //создать мапу с животными
     Bear[] bearsInLocate = new Bear[Settings.BEAR_MAX_IN_LOCATE];
     Boa[] boaInLocate = new Boa[Settings.BOA_MAX_IN_LOCATE];
     Boar[] boarsInLocate = new Boar[Settings.BOAR_MAX_IN_LOCATE];
@@ -36,9 +32,9 @@ public class Location {
     Plant[] plantsInLocate = new Plant[Settings.PLANTS_MAX_IN_LOCATE];
 
 
-/*    Creature[][] arrayAnimalInLocate  = new Creature[][]{bearsInLocate, boaInLocate, boarsInLocate,buffaloInLocate,
+    public Creature[][] arrayAnimalInLocate  = new Creature[][]{bearsInLocate, boaInLocate, boarsInLocate,buffaloInLocate,
             caterpillarsInLocate,ducksInLocate,eaglesInLocate, goatsInLocate,mouseInLocate,rabbitsInLocate,
-            foxesInLocate,horsesInLocate,deerInLocate,sheepInLocate,wolvesInLocate,plantsInLocate};*/
+            foxesInLocate,horsesInLocate,deerInLocate,sheepInLocate,wolvesInLocate,plantsInLocate};
 
 
     private int countUnit(Creature[] unit){
@@ -74,7 +70,7 @@ public class Location {
         return animalInlLocate;
     }
 
-    private void initialization(){
+    public void initialization(){
         Factory factory = new Factory();
         for (int i = 0; i < bearsInLocate.length/3; i++) {
             bearsInLocate[i] = (Bear) factory.create(CREATURE_TYPE.BEAR);
@@ -127,6 +123,7 @@ public class Location {
 
         }
     }
+
 
     // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -
     // ИНИЦИАЛИЗИРОВАВ ЕЕ НА СТАРТЕ КАКИМ-ТО КОЛ-ВОМ ЖИВОТНЫХ И РАСТЕНИЙ

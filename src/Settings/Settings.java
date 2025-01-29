@@ -1,5 +1,8 @@
 package Settings;
 
+import entity.creature.Creature;
+import entity.creature.animal.Animal;
+import entity.creature.animal.predator.Wolf;
 import entity.creature.factory.CREATURE_TYPE;
 
 import java.awt.*;
@@ -12,6 +15,7 @@ public class Settings {
 
     public final static int columnsCount = 2;
     public final static int rowsCount = 2;
+//    public final static int SIMULATION_DAY = 25;
 
     public final static String BEAR_IMAGE = "\uD83D\uDC3B";
     public final static String BOAR_IMAGE = "\uD83D\uDC17";
@@ -145,5 +149,29 @@ public class Settings {
     public final static int WOLF_MAX_IN_LOCATE = 30;
     public final static int BOAR_MAX_IN_LOCATE = 50;
     public final static int PLANTS_MAX_IN_LOCATE = 200;
+
+    public static  Map <CREATURE_TYPE, Creature> creature_typeAnimalMap = new HashMap<>();
+
+
+    static {
+        creature_typeAnimalMap.put(CREATURE_TYPE.WOLF, (Creature) (Object)CREATURE_TYPE.WOLF);
+        creature_typeAnimalMap.put(CREATURE_TYPE.FOX, (Creature) (Object)CREATURE_TYPE.FOX);
+        creature_typeAnimalMap.put(CREATURE_TYPE.EAGLE, (Creature) (Object)CREATURE_TYPE.EAGLE);
+        creature_typeAnimalMap.put(CREATURE_TYPE.BOA, (Creature) (Object)CREATURE_TYPE.BOA);
+        creature_typeAnimalMap.put(CREATURE_TYPE.BEAR, (Creature) (Object)CREATURE_TYPE.BEAR);
+        creature_typeAnimalMap.put(CREATURE_TYPE.SHEEP, (Creature) (Object)CREATURE_TYPE.SHEEP);
+        creature_typeAnimalMap.put(CREATURE_TYPE.RABBIT, (Creature) (Object)CREATURE_TYPE.RABBIT);
+        creature_typeAnimalMap.put(CREATURE_TYPE.MOUSE, (Creature) (Object)CREATURE_TYPE.MOUSE);
+        creature_typeAnimalMap.put(CREATURE_TYPE.HORSE, (Creature) (Object)CREATURE_TYPE.HORSE);
+        creature_typeAnimalMap.put(CREATURE_TYPE.GOAT, (Creature) (Object)CREATURE_TYPE.GOAT);
+        creature_typeAnimalMap.put(CREATURE_TYPE.DUCK, (Creature) (Object)CREATURE_TYPE.DUCK);
+        creature_typeAnimalMap.put(CREATURE_TYPE.DEER, (Creature) (Object)CREATURE_TYPE.DEER);
+        creature_typeAnimalMap.put(CREATURE_TYPE.CATERPILLAR, (Creature) (Object)CREATURE_TYPE.CATERPILLAR);
+        creature_typeAnimalMap.put(CREATURE_TYPE.BUFFALO, (Creature) (Object)CREATURE_TYPE.BUFFALO);
+        creature_typeAnimalMap.put(CREATURE_TYPE.BOAR, (Creature) (Object)CREATURE_TYPE.BOAR);
+        creature_typeAnimalMap.put(CREATURE_TYPE.PLANT, (Creature) (Object)CREATURE_TYPE.PLANT);
+
+
+    }
 
 }

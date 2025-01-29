@@ -21,15 +21,8 @@ public class Sheep extends Herbivore{
     }
 
     @Override
-    public void eat() {
-        Integer chance = this.toEatHerb(Settings.sheepVictim, CREATURE_TYPE.SHEEP);
-        if (RandomVictim.victimIsDead(chance)){
-            //удалить жертву из массива локации
-
-        }else{
-            die();
-        }
-
+    public Creature eat() {
+        return this.toEatHerb(Settings.sheepVictim,CREATURE_TYPE.SHEEP);
     }
 
     @Override

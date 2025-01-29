@@ -1,37 +1,38 @@
-package util.population;
+package entity;
 
 import Settings.Settings;
-import entity.Island;
 
 import java.util.Map;
 
 
-public class Population  {
-    static Island island;
+public class Population {
+    private static Island island;
 
     public Population(Island island) {
         Population.island = island;
     }
 
-    static Integer sumBear = 0;
-    static Integer sumBoa = 0;
-    static Integer sumEagle = 0;
-    static Integer sumFox = 0;
-    static Integer sumWolf = 0;
-    static Integer sumBoar = 0;
-    static Integer sumCaterpillar = 0;
-    static Integer sumBuffalo = 0;
-    static Integer sumDeer = 0;
-    static Integer sumDuck = 0;
-    static Integer sumGoat = 0;
-    static Integer sumHorse = 0;
-    static Integer sumMouse = 0;
-    static Integer sumRabbit = 0;
-    static Integer sumSheep = 0;
-    static Integer sumPlant = 0;
+    private  static Integer sumBear = 0;
+    private static Integer sumBoa = 0;
+    private static Integer sumEagle = 0;
+    private static Integer sumFox = 0;
+    private static Integer sumWolf = 0;
+    private static Integer sumBoar = 0;
+    private static Integer sumCaterpillar = 0;
+    private static Integer sumBuffalo = 0;
+    private static Integer sumDeer = 0;
+    private static Integer sumDuck = 0;
+    private static Integer sumGoat = 0;
+    private static Integer sumHorse = 0;
+    private static Integer sumMouse = 0;
+    private static Integer sumRabbit = 0;
+    private static Integer sumSheep = 0;
+    private static Integer sumPlant = 0;
+
 
     public static void printPopulation() {
         countingTheSumOfAnimals();
+
         System.out.print(Settings.BEAR_IMAGE + " = " + getSumBear() + "|| ");
         System.out.print(Settings.BOA_IMAGE + " = " + getSumBoa() + " || ");
         System.out.print(Settings.EAGLE_IMAGE + " = " + getSumEagle() + " || ");
@@ -198,14 +199,12 @@ public class Population  {
         Population.sumSheep = sumSheep;
     }
 
-    public static Integer getSumPlant() {
+    private static Integer getSumPlant() {
         return sumPlant;
     }
 
-    public static void setSumPlant(Integer sumPlant) {
+    private static void setSumPlant(Integer sumPlant) {
         Population.sumPlant = sumPlant;
     }
-
-
 
 }

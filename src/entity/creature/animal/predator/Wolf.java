@@ -3,6 +3,7 @@ package entity.creature.animal.predator;
 import Settings.SettigsAnimal;
 import Settings.Settings;
 import entity.creature.Creature;
+import entity.creature.animal.Animal;
 import entity.creature.factory.CREATURE_TYPE;
 import util.rndm.RandomVictim;
 
@@ -25,19 +26,13 @@ public class Wolf extends Predator{
     }
 
     @Override
-    public  void eat() {
-        Integer chance = this.toEatPr(Settings.wolfVictim,CREATURE_TYPE.WOLF);
-        if (RandomVictim.victimIsDead(chance)){
-            //удалить жертву из массива локации
-
-        }else{
-            die();
-        }
+    public  Creature eat() {
+        return this.toEatPr(Settings.wolfVictim, CREATURE_TYPE.WOLF);
     }
 
     @Override
     public void die() {
-//        выпилиться из локации
+
     }
 
 

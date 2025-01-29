@@ -19,15 +19,8 @@ public class Boa extends Predator{
     }
 
     @Override
-    public void eat() {
-        Integer chance = this.toEatPr(Settings.boaVictim,CREATURE_TYPE.BOA);
-        if (RandomVictim.victimIsDead(chance)){
-            //удалить жертву из массива локации
-
-        }else{
-            die();
-        }
-
+    public  Creature eat() {
+        return this.toEatPr(Settings.wolfVictim, CREATURE_TYPE.WOLF);
     }
 
     @Override
