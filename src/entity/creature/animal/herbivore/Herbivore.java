@@ -20,9 +20,9 @@ public abstract class Herbivore extends Animal {
         SettigsAnimal settigsAnimal = Settings.CREATURE_SETTINGS.get(type);
 
         if (Rndm.random.nextInt(100) <= settigsAnimal.getChanceToEat().get(name)){
-            return Settings.creature_typeAnimalMap.get(name);
+            return Settings.creature_typeToAnimalMap.get(name);
         }else {
-            return Settings.creature_typeAnimalMap.get(type);
+            return Settings.creature_typeToAnimalMap.get(type);
         }
 
     }

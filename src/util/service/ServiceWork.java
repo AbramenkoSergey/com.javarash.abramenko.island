@@ -20,8 +20,7 @@ public class ServiceWork implements  Runnable{
                 //проброс того кого нужно удалить
                 Creature eat = animal.eat();
                 deadAnimal(eat);
-
-                animal.move();
+                animal.move(j,i);
                 animal.reproduce();
             }
 
@@ -29,8 +28,6 @@ public class ServiceWork implements  Runnable{
 
         //Взять массив массивов и запустить  методы всех по очереди.
         //Через анемала вытаскиваю жертву и жертву удаляю из массива
-
-
     }
     private Animal findAnimal(Animal animal){
 
@@ -48,7 +45,6 @@ public class ServiceWork implements  Runnable{
                     if(locations.arrayAnimalInLocate[i][j] != null){
                         locations.arrayAnimalInLocate[i][j]=null;
                     }
-
                 }
             }
 
@@ -56,9 +52,5 @@ public class ServiceWork implements  Runnable{
 
     }
 
-    @Override
-    public boolean equals(Object obj) {
 
-        return super.equals(obj);
-    }
 }

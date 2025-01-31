@@ -20,7 +20,7 @@ public class Bear extends Predator{
 
     @Override
     public  Creature eat() {
-        return this.toEatPr(Settings.wolfVictim, CREATURE_TYPE.WOLF);
+        return this.toEatPr(Settings.bearVictim, CREATURE_TYPE.BEAR);
     }
 
     @Override
