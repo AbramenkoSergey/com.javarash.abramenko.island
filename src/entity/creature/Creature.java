@@ -14,4 +14,9 @@ public abstract class Creature {
         this.weight = settigsAnimal.getWeight();
         this.travelRange = settigsAnimal.getTravelRange();
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

@@ -1,10 +1,10 @@
 package entity.creature.animal.herbivore;
 
 import Settings.SettigsAnimal;
-import Settings.Settings;
+import entity.Island;
+import entity.Location;
 import entity.creature.Creature;
-import entity.creature.factory.CREATURE_TYPE;
-import util.rndm.RandomVictim;
+import entity.creature.animal.Animal;
 
 
 public class Buffalo extends Herbivore{
@@ -15,30 +15,23 @@ public class Buffalo extends Herbivore{
 
 
     @Override
-    public void die() {
+    public void die(Location location) {
+
+    }
+
+
+    @Override
+    public void eat(Location loca) {
 
     }
 
     @Override
-    public void eat() {
-        Integer chance = this.toEatHerb(Settings.buffaloVictim, CREATURE_TYPE.BUFFALO);
-        if (RandomVictim.victimIsDead(chance)){
-            //удалить жертву из массива локации
-
-        }else{
-            die();
-        }
+    public void move(Integer x, Integer y, Island island) {
 
     }
 
     @Override
-    public void move() {
-
+    public Animal reproduce(Location location) {
+        return super.reproduce(location);
     }
-
-    @Override
-    public Creature reproduce() {
-        return super.reproduce();
-    }
-
 }

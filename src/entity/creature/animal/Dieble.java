@@ -1,7 +1,7 @@
 package entity.creature.animal;
 
-import entity.creature.Creature;
+import entity.Location;
 
 public interface Dieble {
-    Creature die();
+    void die(Location location);
 }

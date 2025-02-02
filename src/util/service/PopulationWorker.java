@@ -16,7 +16,7 @@ public class PopulationWorker implements Runnable{
 
 
             System.out.println(day++);
-            Population.printPopulation();
+//            Population.printPopulation();
 
     }
 }

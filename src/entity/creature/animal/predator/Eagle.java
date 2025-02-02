@@ -2,9 +2,10 @@ package entity.creature.animal.predator;
 
 import Settings.SettigsAnimal;
 import Settings.Settings;
+import entity.Island;
+import entity.Location;
 import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
-import util.rndm.RandomVictim;
 
 public class Eagle extends Predator{
 
@@ -14,23 +15,18 @@ public class Eagle extends Predator{
     }
 
     @Override
-    public void die() {
+    public void die(Location location) {
+
+    }
+
+
+    @Override
+    public void eat(Location loca) {
 
     }
 
     @Override
-    public  Creature eat() {
-        return this.toEatPr(Settings.wolfVictim, CREATURE_TYPE.WOLF);
-    }
-
-    @Override
-    public void move() {
+    public void move(Integer x, Integer y, Island island) {
 
     }
-
-    @Override
-    public Creature reproduce() {
-        return super.reproduce();
-    }
-    //орел
 }

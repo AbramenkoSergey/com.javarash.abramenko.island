@@ -2,10 +2,10 @@ package entity.creature.animal.herbivore;
 
 import Settings.SettigsAnimal;
 import Settings.Settings;
+import entity.Island;
+import entity.Location;
 import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;
-import util.rndm.RandomVictim;
-
 
 
 public class Sheep extends Herbivore{
@@ -16,23 +16,19 @@ public class Sheep extends Herbivore{
     }
 
     @Override
-    public void die() {
+    public void die(Location location) {
 
     }
 
     @Override
-    public Creature eat() {
-        return this.toEatHerb(Settings.sheepVictim,CREATURE_TYPE.SHEEP);
-    }
-
-    @Override
-    public void move() {
+    public void eat(Location loca) {
 
     }
 
     @Override
-    public Creature reproduce() {
-        return super.reproduce();
+    public void move(Integer x, Integer y, Island island) {
+
     }
+
     //овца
 }

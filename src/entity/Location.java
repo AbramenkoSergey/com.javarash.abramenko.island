@@ -2,6 +2,7 @@ package entity;
 
 import Settings.*;
 import entity.creature.Creature;
+import entity.creature.animal.Animal;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
 import entity.creature.factory.CREATURE_TYPE;
@@ -11,7 +12,7 @@ import entity.creature.plant.Plant;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Location {
+public class Location  {
 
     private Bear[] bearsInLocate = new Bear[Settings.BEAR_MAX_IN_LOCATE];
     private Boa[] boaInLocate = new Boa[Settings.BOA_MAX_IN_LOCATE];
@@ -35,8 +36,8 @@ public class Location {
             foxesInLocate,horsesInLocate,deerInLocate,sheepInLocate,wolvesInLocate,plantsInLocate};
     private int countUnit(Creature[] unit){
         int i = 0;
-        for (int i1 = 0; i1 < unit.length; i1++) {
-            if(unit[i1]!=null){
+        for (int s = 0; s < unit.length; s++) {
+            if(unit[s]!=null){
                 i=i+1;
             }
         }
@@ -121,6 +122,45 @@ public class Location {
         }
     }
 
+    public Animal getVictim(CREATURE_TYPE creatureType){
+        for (int i = 0; i < arrayAnimalInLocate.length; i++) {
+            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creatureType.toString().toUpperCase())){
+                for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
+                    if(arrayAnimalInLocate[i][f] != null){
+                        return (Animal) arrayAnimalInLocate[i][f];
+                    }
+                }
+            }
+
+        }
+        /*return switch (creatureType){
+            case GOAT -> {
+                for (int i = 0; i < goatsInLocate.length; i++) {
+                    if(goatsInLocate[i] != null){
+                        yield goatsInLocate[i];
+                    }
+                }
+            }
+
+        };*/
+        return  null;
+    }
+
+    public void removeCreature(Creature creature){
+        OUT:
+        for (int i = 0; i < arrayAnimalInLocate.length; i++) {
+            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creature.getClass().getSimpleName().toUpperCase())){
+                for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
+                    if(arrayAnimalInLocate[i][f] != null){
+                       arrayAnimalInLocate[i][f] = null;
+                       break OUT;
+                    }
+                }
+            }
+
+        }
+
+    }
 
         // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -
 

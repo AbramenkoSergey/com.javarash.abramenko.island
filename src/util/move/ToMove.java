@@ -7,13 +7,14 @@ import entity.Location;
 
 import entity.creature.factory.CREATURE_TYPE;
 import entity.creature.factory.Factory;
-import util.rndm.Rndm;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class ToMove {
 
     private static Direction directionMove(){
-        int number = Rndm.random.nextInt(1,5);
+        int number = ThreadLocalRandom.current().nextInt(1,5);
         return switch (number){
             case 1 -> Direction.UP;
             case 2 ->Direction.LEFT;
@@ -151,14 +152,16 @@ public class ToMove {
 
     }
     private boolean checkMove(Integer x,Integer y){
-        try {
-            if (Island.class.newInstance().getLocationPoint(x, y) != null){
-                return true;
-            }else {
-                return false;
-            }
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            //СТОИТ ПЕРЕДЕЛАТЬ НЬЮ ИНСТАНС
+//            if (Island.class.getLocationPoint(x, y) != null){
+//                return true;
+//            }else {
+//                return false;
+//            }
+//        } catch (InstantiationException | IllegalAccessException e) {
+//            throw new RuntimeException(e);
+//        }
+        return  false;
     }
 }

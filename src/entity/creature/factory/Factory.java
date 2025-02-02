@@ -48,6 +48,8 @@ public class Factory {
            case BUFFALO -> new Buffalo(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.BUFFALO));
            case BOAR -> new Boar(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.BOAR));
            case PLANT -> new Plant(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.PLANT));
+           case HORSE -> new Horse(Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.HORSE));
+
            default -> throw new RuntimeException("Type not found: " + eff );
 
        };

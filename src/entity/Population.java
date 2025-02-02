@@ -4,7 +4,7 @@ import Settings.Settings;
 
 import java.util.Map;
 
-
+//TODO РАЗОБРАТЬСЯ В КЛАССЕ
 public class Population {
     private static Island island;
 
@@ -49,6 +49,22 @@ public class Population {
         System.out.print(Settings.RABBIT_IMAGE + " = " + getSumRabbit() + " || ");
         System.out.print(Settings.SHEEP_IMAGE + " = " + getSumSheep() + " || \n");
         System.out.println(Settings.PLANT_IMAGE + " = " + getSumPlant() + " || ");
+        setSumBear(0);
+        setSumBoa(0);
+        setSumEagle(0);
+        setSumFox(0);
+        setSumWolf(0);
+        setSumBoar(0);
+        setSumBuffalo(0);
+        setSumCaterpillar(0);
+        setSumDeer(0);
+        setSumDuck(0);
+        setSumGoat(0);
+        setSumHorse(0);
+        setSumMouse(0);
+        setSumRabbit(0);
+        setSumSheep(0);
+        setSumPlant(0);
 
     }
 
@@ -70,7 +86,7 @@ public class Population {
                 setSumDuck(getSumDuck() + mapAnimalInLocate.get("DUCK"));
                 setSumGoat(getSumGoat() + mapAnimalInLocate.get("GOAT"));
                 setSumHorse(getSumHorse() + mapAnimalInLocate.get("HORSE"));
-                setSumMouse(getSumMouse() + mapAnimalInLocate.get("BEAR"));
+                setSumMouse(getSumMouse() + mapAnimalInLocate.get("MOUSE"));
                 setSumRabbit(getSumRabbit() + mapAnimalInLocate.get("RABBIT"));
                 setSumSheep(getSumSheep() + mapAnimalInLocate.get("SHEEP"));
                 setSumPlant(getSumPlant() + mapAnimalInLocate.get("PLANT"));

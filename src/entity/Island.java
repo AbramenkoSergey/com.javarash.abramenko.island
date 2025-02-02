@@ -1,5 +1,8 @@
 package entity;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Island {
 
     private static int columnsCount;
@@ -21,9 +24,9 @@ public class Island {
         }
     }
 
-    public Location[][] getLocations() {
-        return locations;
-    }
+
+//в воркера передовать  конкретную локацию
+
 
     public Location getLocationPoint(Integer x, Integer y){
         try {
