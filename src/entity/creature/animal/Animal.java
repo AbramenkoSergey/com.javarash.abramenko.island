@@ -21,10 +21,6 @@ public abstract class Animal extends Creature
         return satietyPerDay;
     }
 
-    protected void setSatietyPerDay(int satietyPerDay) {
-        this.satietyPerDay = satietyPerDay;
-    }
-
     private   int satietyPerDay = 100;
 
     public Animal(SettigsAnimal settigsAnimal) {
@@ -34,10 +30,6 @@ public abstract class Animal extends Creature
     protected void satietyPerDayDecrease(){
         satietyPerDay = satietyPerDay/2;
     }
-    protected void satietyPerDaySetBackValue(){
-        satietyPerDay = 100;
-    }
-
 
     protected void toMove(CREATURE_TYPE creatureType, Location location, Island island) {
         Animal animal = this;
