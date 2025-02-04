@@ -2,6 +2,7 @@ package entity.creature.animal.predator;
 
 import Settings.SettigsAnimal;
 
+import entity.Island;
 import entity.Location;
 
 
@@ -24,7 +25,7 @@ public class Eagle extends Predator{
     }
 
     @Override
-    public void move(Integer x, Integer y) {
+    public void move(Island island, Location location) {
 
     }
     @Override

@@ -2,7 +2,6 @@ package entity;
 
 import Settings.*;
 import entity.creature.Creature;
-import entity.creature.animal.Animal;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
 import entity.creature.factory.CREATURE_TYPE;
@@ -12,7 +11,8 @@ import entity.creature.plant.Plant;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Location  {
+public class Location {
+
 
     private Bear[] bearsInLocate = new Bear[Settings.BEAR_MAX_IN_LOCATE];
     private Boa[] boaInLocate = new Boa[Settings.BOA_MAX_IN_LOCATE];
@@ -31,38 +31,39 @@ public class Location  {
     private Wolf[] wolvesInLocate = new Wolf[Settings.WOLF_MAX_IN_LOCATE];
     private Plant[] plantsInLocate = new Plant[Settings.PLANTS_MAX_IN_LOCATE];
 
-    public Creature[][] arrayAnimalInLocate  = new Creature[][]{bearsInLocate, boaInLocate, boarsInLocate,buffaloInLocate,
-            caterpillarsInLocate,ducksInLocate,eaglesInLocate, goatsInLocate,mouseInLocate,rabbitsInLocate,
-            foxesInLocate,horsesInLocate,deerInLocate,sheepInLocate,wolvesInLocate,plantsInLocate};
-    private int countUnit(Creature[] unit){
+    public Creature[][] arrayAnimalInLocate = new Creature[][]{bearsInLocate, boaInLocate, boarsInLocate, buffaloInLocate,
+            caterpillarsInLocate, ducksInLocate, eaglesInLocate, goatsInLocate, mouseInLocate, rabbitsInLocate,
+            foxesInLocate, horsesInLocate, deerInLocate, sheepInLocate, wolvesInLocate, plantsInLocate};
+
+    private int countUnit(Creature[] unit) {
         int i = 0;
         for (int s = 0; s < unit.length; s++) {
-            if(unit[s]!=null){
-                i=i+1;
+            if (unit[s] != null) {
+                i = i + 1;
             }
         }
         return i;
     }
 
-    public Map<String, Integer> createMapAnimalInLocate(){
-        HashMap <String, Integer> animalInlLocate = new HashMap<>();
+    public Map<String, Integer> createMapAnimalInLocate() {
+        HashMap<String, Integer> animalInlLocate = new HashMap<>();
 
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BEAR),countUnit(bearsInLocate));
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BOA), countUnit(boaInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BOAR), countUnit(boarsInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BUFFALO), countUnit(buffaloInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.CATERPILLAR), countUnit(caterpillarsInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.DUCK), countUnit(ducksInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.GOAT), countUnit(goatsInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.EAGLE), countUnit(eaglesInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.MOUSE), countUnit(mouseInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.RABBIT), countUnit(rabbitsInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.FOX), countUnit(foxesInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.HORSE), countUnit(horsesInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.DEER), countUnit(deerInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.SHEEP), countUnit(sheepInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.WOLF), countUnit(wolvesInLocate) );
-        animalInlLocate.put(String.valueOf(CREATURE_TYPE.PLANT), countUnit(plantsInLocate) );
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BEAR), countUnit(bearsInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BOA), countUnit(boaInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BOAR), countUnit(boarsInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.BUFFALO), countUnit(buffaloInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.CATERPILLAR), countUnit(caterpillarsInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.DUCK), countUnit(ducksInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.GOAT), countUnit(goatsInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.EAGLE), countUnit(eaglesInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.MOUSE), countUnit(mouseInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.RABBIT), countUnit(rabbitsInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.FOX), countUnit(foxesInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.HORSE), countUnit(horsesInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.DEER), countUnit(deerInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.SHEEP), countUnit(sheepInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.WOLF), countUnit(wolvesInLocate));
+        animalInlLocate.put(String.valueOf(CREATURE_TYPE.PLANT), countUnit(plantsInLocate));
 
         return animalInlLocate;
     }
@@ -122,11 +123,11 @@ public class Location  {
         }
     }
 
-    public Creature getVictim(CREATURE_TYPE creatureType){
+    public Creature getVictim(CREATURE_TYPE creatureType) {
         for (int i = 0; i < arrayAnimalInLocate.length; i++) {
-            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creatureType.toString().toUpperCase())){
+            if (arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creatureType.toString().toUpperCase())) {
                 for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
-                    if(arrayAnimalInLocate[i][f] != null){
+                    if (arrayAnimalInLocate[i][f] != null) {
                         return arrayAnimalInLocate[i][f];
                     }
                 }
@@ -143,31 +144,34 @@ public class Location  {
             }
 
         };*/
-        return  null;
+        return null;
     }
 
-    public void removeCreature(Creature creature){
+    public void removeCreature(Creature creature) {
         OUT:
         for (int i = 0; i < arrayAnimalInLocate.length; i++) {
-            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creature.getClass().getSimpleName().toUpperCase())){
+            if (arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creature.getClass().getSimpleName().toUpperCase())) {
                 for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
-                    if(arrayAnimalInLocate[i][f] != null){
-                       arrayAnimalInLocate[i][f] = null;
-                       break OUT;
+                    if (arrayAnimalInLocate[i][f] != null) {
+                        arrayAnimalInLocate[i][f] = null;
+                        break OUT;
                     }
                 }
             }
 
         }
 
-    }   public boolean findAnimalForRepro(Class<? extends Creature> animal){
+
+    }
+
+    public boolean findAnimalForRepro(Class<? extends Creature> animal) {
         int animalCout = 0;
 //        OUT:
         for (int i = 0; i < arrayAnimalInLocate.length; i++) {
-            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(animal.getSimpleName().toUpperCase())){
+            if (arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(animal.getSimpleName().toUpperCase())) {
                 for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
-                    if(arrayAnimalInLocate[i][f] != null){
-                       animalCout = animalCout + 1;
+                    if (arrayAnimalInLocate[i][f] != null) {
+                        animalCout = animalCout + 1;
 //                       break OUT;
                     }
                 }
@@ -178,7 +182,9 @@ public class Location  {
         return animalCout >= 2;
     }
 
-        // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -
 
-    }// ИНИЦИАЛИЗИРОВАВ ЕЕ НА СТАРТЕ КАКИМ-ТО КОЛ-ВОМ ЖИВОТНЫХ И РАСТЕНИЙ
+
+    // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -
+
+}// ИНИЦИАЛИЗИРОВАВ ЕЕ НА СТАРТЕ КАКИМ-ТО КОЛ-ВОМ ЖИВОТНЫХ И РАСТЕНИЙ
 

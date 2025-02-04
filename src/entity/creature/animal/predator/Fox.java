@@ -33,4 +33,9 @@ public class Fox extends Predator{
     @Override
     public void reproduce(Location location) {
     }
+
+    @Override
+    public void move(Island island, Location location) {
+
+    }
 }

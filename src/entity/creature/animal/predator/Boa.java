@@ -26,7 +26,7 @@ public class Boa extends Predator{
     }
 
     @Override
-    public void move(Integer x, Integer y) {
+    public void move(Island island, Location location) {
 
     }
 

@@ -5,13 +5,7 @@ import Settings.Settings;
 import entity.Island;
 import entity.Location;
 import entity.creature.Creature;
-import entity.creature.animal.Animal;
 import entity.creature.factory.CREATURE_TYPE;
-import entity.creature.factory.Factory;
-import util.move.ToMove;
-
-
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Wolf extends Predator{
 
@@ -23,8 +17,9 @@ public class Wolf extends Predator{
 
 
     @Override
-    public void move(Integer x, Integer y) {
+    public void move(Island island, Location location) {
         //ПРОБРОСИТЬ ИСЛАНД вниз
+        toMove(CREATURE_TYPE.WOLF, location, island);
     }
 
     @Override

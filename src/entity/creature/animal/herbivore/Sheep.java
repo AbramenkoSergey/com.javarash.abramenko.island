@@ -28,7 +28,7 @@ public class Sheep extends Herbivore{
             if(creature == this){
 //                location.removeCreature(this);
                 this.die(location);
-                System.out.println("Овца помер, плак плак");
+//                System.out.println("Овца помер, плак плак");
             }else{
 //                System.out.println("Овца съел  " + creature.getClass().getSimpleName());
 
@@ -36,14 +36,14 @@ public class Sheep extends Herbivore{
 
             }
         }else {
-            System.out.println("Акелла промахнулся");
+//            System.out.println("Акелла промахнулся");
 
         }
 
     }
 
     @Override
-    public void move(Integer x, Integer y) {
+    public void move(Island island, Location location) {
 
     }
 

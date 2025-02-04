@@ -13,8 +13,8 @@ import java.util.Map;
 
 public class Settings {
 
-    public final static int columnsCount = 2;
-    public final static int rowsCount = 2;
+    public final static int columnsCount = 10;
+    public final static int rowsCount = 10;
     public final static int SIMULATION_DAY = 4;
 
 

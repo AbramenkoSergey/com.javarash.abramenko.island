@@ -1,4 +1,4 @@
-package util.rndm;
+package util.randomVictim;
 
 
 import entity.creature.factory.CREATURE_TYPE;

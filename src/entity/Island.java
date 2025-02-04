@@ -1,5 +1,7 @@
 package entity;
 
+import Settings.Settings;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -29,18 +31,36 @@ public class Island {
 //в воркера передовать  конкретную локацию
 
 
-    public Location getLocationPoint(Integer x, Integer y){
+    public Location getLocation(Integer x, Integer y){
         try {
             return locations[y][x];
         }catch (ArrayIndexOutOfBoundsException e){
 
-            e.printStackTrace();
+            //e.printStackTrace();
             return null;
         }
 
     }
-
-    public Location[][] getLocations() {
-        return locations;
+    public int getLocationX(Location location) {
+        for (int i = 0; i < Settings.rowsCount; i++) {
+            for (int j = 0; j < Settings.columnsCount; j++) {
+                if (locations[i][j].equals(location)) {
+                    return j;
+                }
+            }
+        }
+        return -1;
     }
+    public int getLocationY(Location location) {
+        for (int i = 0; i < Settings.rowsCount; i++) {
+            for (int j = 0; j < Settings.columnsCount; j++) {
+                if (locations[i][j].equals(location)) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+
 }
