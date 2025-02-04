@@ -122,12 +122,12 @@ public class Location  {
         }
     }
 
-    public Animal getVictim(CREATURE_TYPE creatureType){
+    public Creature getVictim(CREATURE_TYPE creatureType){
         for (int i = 0; i < arrayAnimalInLocate.length; i++) {
             if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(creatureType.toString().toUpperCase())){
                 for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
                     if(arrayAnimalInLocate[i][f] != null){
-                        return (Animal) arrayAnimalInLocate[i][f];
+                        return arrayAnimalInLocate[i][f];
                     }
                 }
             }
@@ -160,6 +160,22 @@ public class Location  {
 
         }
 
+    }   public boolean findAnimalForRepro(Class<? extends Creature> animal){
+        int animalCout = 0;
+//        OUT:
+        for (int i = 0; i < arrayAnimalInLocate.length; i++) {
+            if(arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(animal.getSimpleName().toUpperCase())){
+                for (int f = 0; f < arrayAnimalInLocate[i].length; f++) {
+                    if(arrayAnimalInLocate[i][f] != null){
+                       animalCout = animalCout + 1;
+//                       break OUT;
+                    }
+                }
+            }
+
+        }
+
+        return animalCout >= 2;
     }
 
         // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -

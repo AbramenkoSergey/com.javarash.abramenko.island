@@ -15,6 +15,7 @@ public class Island {
         locations = new Location[columnsCount][rowsCount];
         initialisation();
     }
+
     private void initialisation(){
         for (int i = 0; i < locations.length; i++) {
             for (int j = 0; j < locations[i].length; j++) {
@@ -39,5 +40,7 @@ public class Island {
 
     }
 
-
+    public Location[][] getLocations() {
+        return locations;
+    }
 }

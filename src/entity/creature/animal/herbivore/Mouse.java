@@ -28,7 +28,12 @@ public class Mouse extends Herbivore{
     }
 
     @Override
-    public void move(Integer x, Integer y, Island island) {
+    public void move(Integer x, Integer y) {
+
+    }
+
+    @Override
+    public void reproduce(Location location) {
 
     }
 }

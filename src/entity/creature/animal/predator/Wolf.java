@@ -4,10 +4,14 @@ import Settings.SettigsAnimal;
 import Settings.Settings;
 import entity.Island;
 import entity.Location;
+import entity.creature.Creature;
 import entity.creature.animal.Animal;
 import entity.creature.factory.CREATURE_TYPE;
 import entity.creature.factory.Factory;
 import util.move.ToMove;
+
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Wolf extends Predator{
 
@@ -19,28 +23,23 @@ public class Wolf extends Predator{
 
 
     @Override
-    public void move(Integer x, Integer y, Island island) {
+    public void move(Integer x, Integer y) {
         //ПРОБРОСИТЬ ИСЛАНД вниз
-        ToMove toMove = new ToMove(Wolf.class, CREATURE_TYPE.WOLF);
-        int range = Settings.CREATURE_SETTINGS.get(CREATURE_TYPE.WOLF).getTravelRange();
-
-        toMove.toMove(range, x, y );
-
     }
 
     @Override
     public void eat(Location location) {
 
-        Animal animal = eatPredator(Settings.wolfVictim, CREATURE_TYPE.WOLF, location);
-        if (animal != null){
-            if(animal == this){
+        Creature creature = toEat(Settings.wolfVictim, CREATURE_TYPE.WOLF, location);
+        if (creature != null){
+            if(creature == this){
 //                location.removeCreature(this);
                 this.die(location);
 //                System.out.println("Волк помер, плак плак");
             }else{
-//                System.out.println("Волк съел  " + animal.getClass().getSimpleName());
+//                System.out.println("Волк съел  " + creature.getClass().getSimpleName());
 //                animal.die(location);
-                location.removeCreature(animal);
+                location.removeCreature(creature);
 
             }
         }else {
@@ -56,13 +55,8 @@ public class Wolf extends Predator{
 
     }
 
-
     @Override
-    public Animal reproduce(Location location) {
-        //взять
-
-        return super.reproduce(location);
+    public void reproduce(Location location) {
+        toRepro(CREATURE_TYPE.WOLF, location);
     }
-
-
 }

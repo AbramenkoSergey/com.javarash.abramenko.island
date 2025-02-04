@@ -5,7 +5,11 @@ import Settings.Settings;
 import entity.Island;
 import entity.Location;
 import entity.creature.Creature;
+import entity.creature.animal.Animal;
 import entity.creature.factory.CREATURE_TYPE;
+import entity.creature.factory.Factory;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Fox extends Predator{
@@ -27,7 +31,6 @@ public class Fox extends Predator{
     }
 
     @Override
-    public void move(Integer x, Integer y, Island island) {
-
+    public void reproduce(Location location) {
     }
 }

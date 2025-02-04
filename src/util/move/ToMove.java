@@ -11,7 +11,10 @@ import entity.creature.factory.Factory;
 import java.util.concurrent.ThreadLocalRandom;
 
 
+
+
 public class ToMove {
+
 
     private static Direction directionMove(){
         int number = ThreadLocalRandom.current().nextInt(1,5);
@@ -25,6 +28,8 @@ public class ToMove {
     }
     private Class className;
     private CREATURE_TYPE creatureType;
+    Island[][] islands;
+
 
 
     public ToMove(Class name, CREATURE_TYPE creatureType) {
@@ -34,85 +39,16 @@ public class ToMove {
 
 
     private void moveToUp(Integer x, Integer y){
-        try {
-            Location moveLocation = Island.class.newInstance().getLocationPoint(x, y);
-            Class.class.getComponentType();
-            for (int i = 0; i < moveLocation.arrayAnimalInLocate.length; i++) {
-                if(moveLocation.arrayAnimalInLocate[i].equals(className))
-                for (int j = 0; j < moveLocation.arrayAnimalInLocate[i].length; j++) {
-                    if(moveLocation.arrayAnimalInLocate[i][j] != null){
-                        Factory factory = new Factory();
-                        moveLocation.arrayAnimalInLocate[i][j] = factory.create(creatureType);
-                    }
-
-                }
-
-            }
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-
 
     }
     private  void moveToLeft(Integer x,Integer y){
-        try {
-            Location moveLocation = Island.class.newInstance().getLocationPoint(x, y);
-            Class.class.getComponentType();
-            for (int i = 0; i < moveLocation.arrayAnimalInLocate.length; i++) {
-                if(moveLocation.arrayAnimalInLocate[i].equals(className))
-                    for (int j = 0; j < moveLocation.arrayAnimalInLocate[i].length; j++) {
-                        if(moveLocation.arrayAnimalInLocate[i][j] != null){
-                            Factory factory = new Factory();
-                            moveLocation.arrayAnimalInLocate[i][j] = factory.create(creatureType);
 
-                        }
-
-                    }
-
-            }
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
     }
     private  void moveDown(Integer x,Integer y){
-        try {
-            Location moveLocation = Island.class.newInstance().getLocationPoint(x, y);
-            Class.class.getComponentType();
-            for (int i = 0; i < moveLocation.arrayAnimalInLocate.length; i++) {
-                if(moveLocation.arrayAnimalInLocate[i].equals(className))
-                    for (int j = 0; j < moveLocation.arrayAnimalInLocate[i].length; j++) {
-                        if(moveLocation.arrayAnimalInLocate[i][j] != null){
-                            Factory factory = new Factory();
-                            moveLocation.arrayAnimalInLocate[i][j] = factory.create(creatureType);
 
-                        }
-
-                    }
-
-            }
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
     }
     private  void moveToRight(Integer x,Integer y){
-        try {
-            Location moveLocation = Island.class.newInstance().getLocationPoint(x, y);
-            Class.class.getComponentType();
-            for (int i = 0; i < moveLocation.arrayAnimalInLocate.length; i++) {
-                if(moveLocation.arrayAnimalInLocate[i].equals(className))
-                    for (int j = 0; j < moveLocation.arrayAnimalInLocate[i].length; j++) {
-                        if(moveLocation.arrayAnimalInLocate[i][j] != null){
-                            Factory factory = new Factory();
-                            moveLocation.arrayAnimalInLocate[i][j] = factory.create(creatureType);
 
-                        }
-
-                    }
-
-            }
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
     }
     public void toMove( Integer countRangeStep,Integer j, Integer i){
         Integer rangeStep = countRangeStep;
@@ -152,16 +88,8 @@ public class ToMove {
 
     }
     private boolean checkMove(Integer x,Integer y){
-//        try {
-//            //СТОИТ ПЕРЕДЕЛАТЬ НЬЮ ИНСТАНС
-//            if (Island.class.getLocationPoint(x, y) != null){
-//                return true;
-//            }else {
-//                return false;
-//            }
-//        } catch (InstantiationException | IllegalAccessException e) {
-//            throw new RuntimeException(e);
-//        }
+
+
         return  false;
     }
 }

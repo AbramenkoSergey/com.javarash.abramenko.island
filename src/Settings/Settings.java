@@ -23,7 +23,7 @@ public class Settings {
     public final static String BOA_IMAGE = "\uD83D\uDC0D";
     public final static String BUFFALO_IMAGE = "\uD83D\uDC03";
     public final static String CATERPILLAR_IMAGE = "\uD83D\uDC1B";
-    public final static String DEAR_IMAGE = "\uD83D\uDC11";
+    public final static String DEAR_IMAGE = "\uD83E\uDD8C";
     public final static String DUCK_IMAGE = "\uD83E\uDD86";
     public final static String EAGLE_IMAGE = "\uD83E\uDD85";
     public final static String FOX_IMAGE = "\uD83E\uDD8A";
@@ -46,19 +46,19 @@ public class Settings {
             CREATURE_TYPE.RABBIT, CREATURE_TYPE.MOUSE, CREATURE_TYPE.DUCK));
     public static ArrayList<CREATURE_TYPE> boarVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT,
             CREATURE_TYPE.CATERPILLAR, CREATURE_TYPE.MOUSE));
-//    public static ArrayList<CREATURE_TYPE> buffaloVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE>caterpillarVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE> deerVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList <CREATURE_TYPE>duckVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT,CREATURE_TYPE.CATERPILLAR));
-//    public static ArrayList<CREATURE_TYPE>eagleVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.FOX,10,
-//            CREATURE_TYPE.RABBIT,CREATURE_TYPE.MOUSE,CREATURE_TYPE.DUCK));
-//    public static ArrayList<CREATURE_TYPE> foxVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.RABBIT,
-//            CREATURE_TYPE.MOUSE, CREATURE_TYPE.SHEEP, CREATURE_TYPE.DUCK, CREATURE_TYPE.CATERPILLAR));
-//    public static ArrayList<CREATURE_TYPE> goatVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE> horseVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE> rabbitVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE> sheepVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
-//    public static ArrayList<CREATURE_TYPE> mouseVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT,CREATURE_TYPE.CATERPILLAR));
+    public static ArrayList<CREATURE_TYPE> buffaloVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE>caterpillarVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE> deerVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList <CREATURE_TYPE>duckVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT,CREATURE_TYPE.CATERPILLAR));
+    public static ArrayList<CREATURE_TYPE> eagleVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.FOX,
+            CREATURE_TYPE.RABBIT,CREATURE_TYPE.MOUSE,CREATURE_TYPE.DUCK));
+    public static ArrayList<CREATURE_TYPE> foxVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.RABBIT,
+            CREATURE_TYPE.MOUSE, CREATURE_TYPE.SHEEP, CREATURE_TYPE.DUCK, CREATURE_TYPE.CATERPILLAR));
+    public static ArrayList<CREATURE_TYPE> goatVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE> horseVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE> rabbitVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE> sheepVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT));
+    public static ArrayList<CREATURE_TYPE> mouseVictim = new ArrayList<>(Arrays.asList(CREATURE_TYPE.PLANT,CREATURE_TYPE.CATERPILLAR));
 
     static {
         //шанс съесть
@@ -134,6 +134,25 @@ public class Settings {
                         CREATURE_TYPE.CATERPILLAR,90)));
 
     }
+    public static Map<CREATURE_TYPE, Class> creatureTypeClassMap = new HashMap<>();
+    static {
+        creatureTypeClassMap.put(CREATURE_TYPE.WOLF, Wolf.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.FOX, Fox.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.EAGLE, Eagle.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.BOA, Boa.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.BEAR, Bear.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.SHEEP, Sheep.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.RABBIT, Rabbit.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.MOUSE, Mouse.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.GOAT, Goat.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.DUCK, Duck.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.DEER, Deer.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.CATERPILLAR, Caterpillar.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.HORSE, Horse.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.BUFFALO, Buffalo.class);
+        creatureTypeClassMap.put(CREATURE_TYPE.BOAR, Boar.class);
+    }
+
     public static final int BEAR_MAX_IN_LOCATE = 5;
     public final static int BOA_MAX_IN_LOCATE = 30;
     public final static int BUFFALO_MAX_IN_LOCATE = 10;

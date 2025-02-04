@@ -24,16 +24,16 @@ public class Bear extends Predator{
 
     @Override
     public void eat(Location loca) {
-        Animal animal = eatPredator(Settings.bearVictim, CREATURE_TYPE.BEAR, loca);
-        if (animal != null){
-            if(animal == this){
+        Creature creature = toEat(Settings.bearVictim, CREATURE_TYPE.BEAR, loca);
+        if (creature != null){
+            if(creature == this){
 //                location.removeCreature(this);
                 this.die(loca);
 //                System.out.println("Медведь помер, плак плак");
             }else{
-//                System.out.println("Медведь съел  " + animal.getClass().getSimpleName());
+//                System.out.println("Медведь съел  " + creature.getClass().getSimpleName());
 //                animal.die(location);
-                loca.removeCreature(animal);
+                loca.removeCreature(creature);
 
             }
         }else {
@@ -43,7 +43,13 @@ public class Bear extends Predator{
     }
 
     @Override
-    public void move(Integer x, Integer y, Island island) {
+    public void move(Integer x, Integer y) {
 
+    }
+
+    @Override
+    public void reproduce(Location location) {
+
+        toRepro(CREATURE_TYPE.BEAR, location);
     }
 }

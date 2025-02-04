@@ -17,25 +17,5 @@ public abstract class Predator extends Animal {
         super(settigsAnimal);
     }
 
-    protected Animal eatPredator(ArrayList<CREATURE_TYPE> list, CREATURE_TYPE type, Location loca) {
-        /* получить список жертв, при успешной погоне жертва пробрасывается, в противном случае  выбрасываем охотника для удаления*/
 
-        //получаем тип жертвы
-        CREATURE_TYPE name = RandomVictim.randomPredatorVictim(list);
-        //нужен  получаем настройки текущего животного
-        SettigsAnimal settigsAnimal = Settings.CREATURE_SETTINGS.get(type);
-        Animal victim = null;
-        if (ThreadLocalRandom.current().nextInt(100) <= settigsAnimal.getChanceToEat().get(name)) {
-            //пробрасываем жертву
-            victim = loca.getVictim(name);
-
-        } else {
-            satietyPerDayDecrease();
-            if(getSatietyPerDay() < 5){
-                victim = this;
-            }
-        }
-        return victim;
-
-    }
 }
