@@ -1,10 +1,8 @@
-package Settings;
+package settings;
 
-import entity.creature.Creature;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
 import entity.creature.factory.CREATURE_TYPE;
-import entity.creature.plant.Plant;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,10 +1,10 @@
 package entity;
 
-import Settings.Settings;
+import settings.Settings;
 
 import java.util.Map;
 
-//TODO РАЗОБРАТЬСЯ В КЛАССЕ
+
 public class Population {
     private static Island island;
 

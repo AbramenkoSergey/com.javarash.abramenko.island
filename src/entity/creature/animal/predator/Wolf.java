@@ -1,7 +1,7 @@
 package entity.creature.animal.predator;
 
-import Settings.SettigsAnimal;
-import Settings.Settings;
+import settings.SettigsAnimal;
+import settings.Settings;
 import entity.Island;
 import entity.Location;
 import entity.creature.Creature;

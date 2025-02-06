@@ -1,6 +1,6 @@
 package entity.creature;
 
-import Settings.SettigsAnimal;
+import settings.SettigsAnimal;
 
 public abstract class Creature {
     double satiety;

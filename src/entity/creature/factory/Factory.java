@@ -1,6 +1,6 @@
 package entity.creature.factory;
 
-import Settings.Settings;
+import settings.Settings;
 import entity.creature.Creature;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;

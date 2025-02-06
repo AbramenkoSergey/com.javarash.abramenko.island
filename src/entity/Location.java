@@ -1,6 +1,6 @@
 package entity;
 
-import Settings.*;
+import settings.*;
 import entity.creature.Creature;
 import entity.creature.animal.herbivore.*;
 import entity.creature.animal.predator.*;
@@ -10,9 +10,10 @@ import entity.creature.plant.Plant;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Location {
-
+    private final ReentrantLock lock = new ReentrantLock();
 
     private Bear[] bearsInLocate = new Bear[Settings.BEAR_MAX_IN_LOCATE];
     private Boa[] boaInLocate = new Boa[Settings.BOA_MAX_IN_LOCATE];
@@ -182,7 +183,9 @@ public class Location {
         return animalCout >= 2;
     }
 
-
+    public ReentrantLock getLock() {
+        return lock;
+    }
 
     // ЛОКАЦИЮ ТОЖЕ НУЖНО ПРАВИЛЬНО СОЗДАТЬ -
 

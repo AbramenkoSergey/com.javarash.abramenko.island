@@ -1,9 +1,6 @@
 package entity;
 
-import Settings.Settings;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import settings.Settings;
 
 public class Island {
 

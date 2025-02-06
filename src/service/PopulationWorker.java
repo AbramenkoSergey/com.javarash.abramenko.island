@@ -1,7 +1,6 @@
-package util.service;
+package service;
 
 import entity.Population;
-import jdk.jfr.StackTrace;
 
 public class PopulationWorker implements Runnable{
     private int day = 1;
@@ -14,9 +13,8 @@ public class PopulationWorker implements Runnable{
     @Override
     public void run() {
 
-
             System.out.println(day++);
-//            Population.printPopulation();
+            Population.printPopulation();
 
     }
 }

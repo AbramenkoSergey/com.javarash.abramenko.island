@@ -1,4 +1,4 @@
-package util.service;
+package service;
 
 import entity.Island;
 import entity.creature.factory.CREATURE_TYPE;

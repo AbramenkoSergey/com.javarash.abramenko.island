@@ -1,11 +1,10 @@
 package entity.creature.animal.herbivore;
 
-import Settings.SettigsAnimal;
-import Settings.Settings;
+import settings.SettigsAnimal;
+import settings.Settings;
 import entity.Island;
 import entity.Location;
 import entity.creature.Creature;
-import entity.creature.animal.Animal;
 import entity.creature.factory.CREATURE_TYPE;
 
 
@@ -44,11 +43,13 @@ public class Sheep extends Herbivore{
 
     @Override
     public void move(Island island, Location location) {
+        toMove(CREATURE_TYPE.SHEEP, location, island);
 
     }
 
     @Override
     public void reproduce(Location location) {
+        toRepro(CREATURE_TYPE.SHEEP, location);
 
     }
 }

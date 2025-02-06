@@ -1,6 +1,6 @@
 package entity.creature.plant;
 
-import Settings.SettigsAnimal;
+import settings.SettigsAnimal;
 import entity.Location;
 import entity.creature.Creature;
 import entity.creature.factory.CREATURE_TYPE;

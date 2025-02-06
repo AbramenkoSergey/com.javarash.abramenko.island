@@ -1,4 +1,4 @@
-package Settings;
+package settings;
 
 import entity.creature.factory.CREATURE_TYPE;
 
