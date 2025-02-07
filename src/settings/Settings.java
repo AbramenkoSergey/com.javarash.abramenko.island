@@ -11,9 +11,9 @@ import java.util.Map;
 
 public class Settings {
 
-    public final static int columnsCount = 10;
-    public final static int rowsCount = 10;
-    public final static int SIMULATION_DAY = 4;
+    public final static int columnsCount = 100;
+    public final static int rowsCount = 20;
+    public final static int SIMULATION_DAY = 500;
 
 
     public final static String BEAR_IMAGE = "\uD83D\uDC3B";

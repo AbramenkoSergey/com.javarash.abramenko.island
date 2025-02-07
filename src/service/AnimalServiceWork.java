@@ -32,7 +32,7 @@ public class AnimalServiceWork implements  Runnable {
                 } else {
                     animal = (Animal) creature;
                 }
-//                    NO WORK
+//
                     animal.eat(locations);
                     animal.reproduce(locations);
                     animal.move(island, locations);

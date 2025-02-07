@@ -18,7 +18,10 @@ public class PlantServiceWork implements Runnable {
 //        новый день на локации
         for (int g = 0; g < island.locations.length; g++) {
             for (int t = 0; t < island.locations[g].length; t++) {
-                ((Plant) new Factory().create(CREATURE_TYPE.PLANT)).grassGrowth(island.locations[g][t]);
+
+                    ((Plant) new Factory().create(CREATURE_TYPE.PLANT)).grassGrowth(island.locations[g][t]);
+
+
             }
         }
     }

@@ -2,19 +2,21 @@ package service;
 
 import entity.Population;
 
-public class PopulationWorker implements Runnable{
-    private int day = 1;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class PopulationWorker implements Runnable {
     public PopulationWorker(Population population) {
         this.population = population;
     }
 
-   private Population population;
+    private final ReentrantLock lock = new ReentrantLock();
+
+    private Population population;
 
     @Override
     public void run() {
 
-            System.out.println(day++);
-            Population.printPopulation();
+        Population.printPopulation();
 
     }
 }

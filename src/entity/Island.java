@@ -32,7 +32,6 @@ public class Island {
         try {
             return locations[y][x];
         }catch (ArrayIndexOutOfBoundsException e){
-
             //e.printStackTrace();
             return null;
         }

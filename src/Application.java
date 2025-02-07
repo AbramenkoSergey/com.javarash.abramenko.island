@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 
@@ -20,12 +21,12 @@ public class Application {
     public static void main(String[] args) {
         // ТОЧКА СБОРКИ И СТАРТА МОЕГО ПРИЛОЖЕНИЯ
 
-        Island island = new Island(Settings.columnsCount, Settings.rowsCount);
+        Island island = new Island(Settings.rowsCount, Settings.columnsCount);
         PlantServiceWork plantServiceWork = new PlantServiceWork(island);
 
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
-        scheduledExecutorService.schedule(plantServiceWork,1, SECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(plantServiceWork,0,50, MILLISECONDS);
 
         PopulationWorker populationWorker = new PopulationWorker(new Population(island));
 
@@ -34,17 +35,21 @@ public class Application {
             for (int g = 0; g < island.locations.length; g++) {
                 for (int t = 0; t < island.locations[g].length; t++) {
                     executorService.execute(new AnimalServiceWork(island.locations[g][t], island));
-                }
 
+                }
             }
             executorService.execute(populationWorker);
         }
-
-
-
-        while (!executorService.isShutdown()){
-            scheduledExecutorService.shutdownNow();
+        executorService.shutdown();
+        while (!executorService.isTerminated()) {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
+        scheduledExecutorService.shutdown();
+
 
 //        Population population = new Population(island);
 //        population.printPopulation();

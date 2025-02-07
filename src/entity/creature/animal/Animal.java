@@ -37,10 +37,6 @@ public abstract class Animal extends Creature
         int stepRange = ThreadLocalRandom.current().nextInt(0, Settings.CREATURE_SETTINGS.get(creatureType).getTravelRange() + 1);
         int y = island.getLocationY(location);
         int x = island.getLocationX(location);
-        /*1)получить остров
-         * 2)проверить можно ли переместить животное в эту локацию
-         * 2.1 если да, удалить в старой и создать в новой
-         * 2.2 если нет, ничего не делать*/
 //        Direction direction;
         Location location1 = null;
         int directionMove = ThreadLocalRandom.current().nextInt(0, 4);
@@ -60,18 +56,22 @@ public abstract class Animal extends Creature
         } else if (directionMove == 3) {
 //            direction = Direction.LEFT;
             location1 = island.getLocation(x - stepRange, y);
-
-
         }
-        if (location1 != null) {
-            try {
-                location.getLock().lock();
-                try {
-                    location1.getLock().lock();
 
+        if (location1 != null) {
+            int hash1 = location.hashCode();
+            int hash2 = location1.hashCode();
+
+            Location firstLoc = hash1 > hash2 ? location : location1;
+            Location secondLoc = hash1 > hash2 ? location1 : location;
+
+            try {
+                firstLoc.getLock().lock();
+                try {
+                    secondLoc.getLock().lock();
                     for (int i = 0; i < location1.arrayAnimalInLocate.length; i++) {
 //                          //ищем подходящий массив
-                        if (location1.arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().contains(animal.getClass().getSimpleName().toUpperCase())) {
+                        if (location1.arrayAnimalInLocate[i].getClass().getSimpleName().toUpperCase().equals(animal.getClass().getSimpleName().toUpperCase())) {
 //                            System.out.println("locanion is exist");
                             for (int a = 0; a < location.arrayAnimalInLocate[i].length; a++) {
                                 if (location1.arrayAnimalInLocate[i][a] == null) {
@@ -83,21 +83,17 @@ public abstract class Animal extends Creature
                             }
                         }
                     }
-
-
                 } finally {
-                    location1.getLock().unlock();
+                    secondLoc.getLock().unlock();
                 }
 
             } finally {
-                location.getLock().unlock();
+                firstLoc.getLock().unlock();
             }
-
-
         }
     }
 
-    protected Creature toEat(ArrayList<CREATURE_TYPE> list, CREATURE_TYPE type, Location loca) {
+    protected  Creature toEat(ArrayList<CREATURE_TYPE> list, CREATURE_TYPE type, Location loca) {
         /* получить список жертв, при успешной погоне жертва пробрасывается, в противном случае  выбрасываем охотника для удаления*/
 
         //получаем тип жертвы
@@ -105,12 +101,10 @@ public abstract class Animal extends Creature
         //нужен  получаем настройки текущего животного
         SettigsAnimal settigsAnimal = CREATURE_SETTINGS.get(type);
         Creature victim = null;
+
         if (ThreadLocalRandom.current().nextInt(101) <= settigsAnimal.getChanceToEat().get(name)) {
             //пробрасываем жертву
             victim = loca.getVictim(name);
-            //satietyPerDaySetBackValue();
-            //
-
         }
         if (victim == null) {
             satietyPerDayDecrease();
@@ -155,7 +149,5 @@ public abstract class Animal extends Creature
         } else {
 //            System.out.println(Settings.creatureTypeClassMap.get(creatureType).getSimpleName()+" не с кем спариваться");
         }
-
-
     }
 }

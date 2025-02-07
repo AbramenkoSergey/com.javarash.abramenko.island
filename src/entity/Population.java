@@ -3,12 +3,13 @@ package entity;
 import settings.Settings;
 
 import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Population {
     private static Island island;
 
-    public Population(Island island) {
+       public Population(Island island) {
         Population.island = island;
     }
 
@@ -29,8 +30,8 @@ public class Population {
     private static Integer sumSheep = 0;
     private static Integer sumPlant = 0;
 
-
     public static void printPopulation() {
+
         countingTheSumOfAnimals();
 
         System.out.print(Settings.BEAR_IMAGE + " = " + getSumBear() + "|| ");
@@ -49,6 +50,7 @@ public class Population {
         System.out.print(Settings.RABBIT_IMAGE + " = " + getSumRabbit() + " || ");
         System.out.print(Settings.SHEEP_IMAGE + " = " + getSumSheep() + " || \n");
         System.out.println(Settings.PLANT_IMAGE + " = " + getSumPlant() + " || ");
+        System.out.println("=".repeat(15));
         setSumBear(0);
         setSumBoa(0);
         setSumEagle(0);
@@ -68,28 +70,30 @@ public class Population {
 
     }
 
-    private static void countingTheSumOfAnimals() {
+    private  static void countingTheSumOfAnimals() {
 //забрать мапу с Животнными и их Количеством из локейшена,
         for (int i = 0; i < island.locations.length; i++) {
             for (int m = 0; m < island.locations[i].length; m++) {
 
+
                 Map<String, Integer> mapAnimalInLocate = island.locations[i][m].createMapAnimalInLocate();
-                setSumBear(getSumBear() + mapAnimalInLocate.get("BEAR"));
-                setSumBoa(getSumBoa() + mapAnimalInLocate.get("BOA"));
-                setSumEagle(getSumEagle() + mapAnimalInLocate.get("EAGLE"));
-                setSumFox(getSumFox() + mapAnimalInLocate.get("FOX"));
-                setSumWolf(getSumWolf() + mapAnimalInLocate.get("WOLF"));
-                setSumBoar(getSumBoar() + mapAnimalInLocate.get("BOAR"));
-                setSumBuffalo(getSumBuffalo() + mapAnimalInLocate.get("BUFFALO"));
-                setSumCaterpillar(getSumCaterpillar() + mapAnimalInLocate.get("CATERPILLAR"));
-                setSumDeer(getSumDeer() + mapAnimalInLocate.get("DEER"));
-                setSumDuck(getSumDuck() + mapAnimalInLocate.get("DUCK"));
-                setSumGoat(getSumGoat() + mapAnimalInLocate.get("GOAT"));
-                setSumHorse(getSumHorse() + mapAnimalInLocate.get("HORSE"));
-                setSumMouse(getSumMouse() + mapAnimalInLocate.get("MOUSE"));
-                setSumRabbit(getSumRabbit() + mapAnimalInLocate.get("RABBIT"));
-                setSumSheep(getSumSheep() + mapAnimalInLocate.get("SHEEP"));
-                setSumPlant(getSumPlant() + mapAnimalInLocate.get("PLANT"));
+                    setSumBear(getSumBear() + mapAnimalInLocate.get("BEAR"));
+                    setSumBoa(getSumBoa() + mapAnimalInLocate.get("BOA"));
+                    setSumEagle(getSumEagle() + mapAnimalInLocate.get("EAGLE"));
+                    setSumFox(getSumFox() + mapAnimalInLocate.get("FOX"));
+                    setSumWolf(getSumWolf() + mapAnimalInLocate.get("WOLF"));
+                    setSumBoar(getSumBoar() + mapAnimalInLocate.get("BOAR"));
+                    setSumBuffalo(getSumBuffalo() + mapAnimalInLocate.get("BUFFALO"));
+                    setSumCaterpillar(getSumCaterpillar() + mapAnimalInLocate.get("CATERPILLAR"));
+                    setSumDeer(getSumDeer() + mapAnimalInLocate.get("DEER"));
+                    setSumDuck(getSumDuck() + mapAnimalInLocate.get("DUCK"));
+                    setSumGoat(getSumGoat() + mapAnimalInLocate.get("GOAT"));
+                    setSumHorse(getSumHorse() + mapAnimalInLocate.get("HORSE"));
+                    setSumMouse(getSumMouse() + mapAnimalInLocate.get("MOUSE"));
+                    setSumRabbit(getSumRabbit() + mapAnimalInLocate.get("RABBIT"));
+                    setSumSheep(getSumSheep() + mapAnimalInLocate.get("SHEEP"));
+                    setSumPlant(getSumPlant() + mapAnimalInLocate.get("PLANT"));
+
 
             }
 
